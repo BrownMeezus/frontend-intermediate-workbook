@@ -11,6 +11,7 @@ $(document).ready(function () {
                 block = null;
                 checkForWin();
 
+
             }
       	}
         else {
@@ -21,6 +22,9 @@ $(document).ready(function () {
     function checkForWin() {
             if ($('[data-stack="2"]').children().length == 4 || $('[data-stack="3"]').children().length == 4) {
                 $('#announce-game-won').text('You won!');
+                if (confirm("Want to keep training?")){
+                	location.reload();
+                }
                 return true;
             } 
             	return false;
